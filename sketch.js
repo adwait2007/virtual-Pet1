@@ -2,7 +2,7 @@ var database,dog,happydog,dogIMG,foodS,foodStock;
 
 function preload(){
   dogIMG=loadImage("images/dogImg.png");
-  happydog=loadImage("images/dogImg.png");
+  happydog=loadImage("images/dogImg1.png");
 }
 
 function setup(){
@@ -11,7 +11,7 @@ function setup(){
   database=firebase.database();
 
   dog=createSprite(250,270,20,20);
-  dog.addImage("standing",dogIMG);
+  dog.addImage(dogIMG);
   dog.scale=0.2;
 
   foodStock=database.ref('Food');
@@ -24,7 +24,7 @@ function draw(){
 
   if(keyWentDown(UP_ARROW)){
     writeStock(foodS);
-    dog.addImage("sitting",happydog);
+    dog.addImage(happydog);
   }
   drawSprites();
 
