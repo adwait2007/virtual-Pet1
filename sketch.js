@@ -30,6 +30,10 @@ function draw(){
 
   textSize(15);
   fill("white");
+  text("Food Remaining:"+foodS,200,200)
+
+  textSize(15);
+  fill("white");
   text(" Note:Press UP_ARROW Key To Feed Drago Milk! ",100,50);
 
 }
@@ -40,10 +44,10 @@ function readStock(data){
 
 function writeStock(x){
 
-  if(x>=0){
+  if(x<=0){
     x=0;
   }else{
-    x=x+1;
+    x=x-1;
   }
 
   database.ref('/').update({
